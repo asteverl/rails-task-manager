@@ -1,0 +1,8 @@
+<h1>This is your list of tasks:</h1>
+<% @tasks.each do |task| %>
+  <%= link_to "#{task.completed} - #{task.title}", task_path(task) %>
+  <%= link_to "Delete", task_path(task), method: :delete, data: { confirm: "Are you sure?" } %>
+  <br>
+<% end %>
+<br>
+<%= link_to "Create a new task", new_task_path %>
